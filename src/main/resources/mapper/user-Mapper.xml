@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rong.boss.moduleA.mapper.UserMapper">
+    <!-- 要对应到所有属性 才能使用-->
+    <!--<resultMap id="users" type="User">
+    <result property="userName" column="user_name"/>
+    </resultMap>-->
+
+    <insert id="createUser" parameterType="User">
+
+        insert into t_user (id,username,create_time) values (#{id},#{username},#{createTime})
+    </insert>
+
+    <select id="selectById" resultType="User" parameterType="java.lang.Integer">
+        select * from t_user where id = #{id}
+    </select>
+
+</mapper>
